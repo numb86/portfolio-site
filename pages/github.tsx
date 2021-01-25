@@ -17,10 +17,7 @@ export default function GithubPage({user}: {user: User}) {
     <>
       <Head>
         <title>{PAGE_TITLE}</title>
-        <meta
-          property="og:url"
-          content={`${process.env.NEXT_PUBLIC_API_SERVER_URL}/github`}
-        />
+        <meta property="og:url" content={`${process.env.SITE_FQDN}/github`} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:type" content="article" />
         <meta name="twitter:title" content={PAGE_TITLE} />

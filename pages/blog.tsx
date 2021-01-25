@@ -15,10 +15,7 @@ export default function BlogPage({entries}: {entries: BlogEntry[]}) {
     <>
       <Head>
         <title>{PAGE_TITLE}</title>
-        <meta
-          property="og:url"
-          content={`${process.env.NEXT_PUBLIC_API_SERVER_URL}/blog`}
-        />
+        <meta property="og:url" content={`${process.env.SITE_FQDN}/blog`} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:type" content="article" />
         <meta name="twitter:title" content={PAGE_TITLE} />
