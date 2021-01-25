@@ -1,7 +1,7 @@
 export function getPopularEntriesApiUrl() {
-  return `${process.env.NEXT_PUBLIC_API_SERVER_URL}/api/blog/entries?sort=popular`;
+  return `/api/blog/entries?sort=popular`;
 }
 
 export function getRecentEntriesApiUrl(page: number) {
-  return `${process.env.NEXT_PUBLIC_API_SERVER_URL}/api/blog/entries?page=${page}`;
+  return `/api/blog/entries?page=${page}`;
 }
