@@ -1,9 +1,10 @@
 import {GetStaticProps} from 'next';
 import Head from 'next/head';
+import {Octokit} from '@octokit/rest';
 
 import {GithubActivity} from '../components/GithubActivity/index';
-import {fetcher} from '../shared/fetcher';
-import {getUserApiUrl} from '../shared/api/github/getEndPointUrl';
+import {fetchSpecifiedUser} from '../shared/api/github/fetchSpecifiedUser';
+import {isUser} from '../components/GithubActivity/User';
 
 import type {User} from '../components/GithubActivity/User';
 
@@ -30,12 +31,17 @@ export default function GithubPage({user}: {user: User}) {
 }
 
 export async function getStaticProps(): Promise<ReturnType<GetStaticProps>> {
-  const user: User = await fetcher(
-    getUserApiUrl(INITIAL_USER_NAME),
-    process.env.API_ROUTES_AUTH
-  );
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_ACCESS_TOKEN,
+  });
+
+  const result = await fetchSpecifiedUser(INITIAL_USER_NAME, octokit);
+
+  if (!isUser(result)) {
+    throw new Error(result.headers.status);
+  }
 
   return {
-    props: {user},
+    props: {user: result},
   };
 }
