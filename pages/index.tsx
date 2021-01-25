@@ -15,7 +15,7 @@ export default function TopPage({entries}: {entries: BlogEntry[]}) {
     <>
       <Head>
         <title>{PAGE_TITLE}</title>
-        <meta property="og:url" content={process.env.SITE_FQDN} />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_FQDN} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content={PAGE_TITLE} />
