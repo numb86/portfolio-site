@@ -1,3 +1,4 @@
+// APIs not currently used
 // /api/blog/entries/[id]
 
 import {NextApiRequest, NextApiResponse} from 'next';
