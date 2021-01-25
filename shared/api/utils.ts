@@ -1,7 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 
-import {API_ROUTES_AUTH_HEADER} from '../constants';
-
 type ErrorDetail = {
   status: number;
   headers: {
@@ -42,27 +40,6 @@ export function resForbidden(res: NextApiResponse) {
   res.end();
 }
 
-function isExternalAccess(req: NextApiRequest) {
-  const {referer} = req.headers;
-
-  if (!referer) {
-    return true;
-  }
-
-  if (process.env.NEXT_PUBLIC_API_SERVER_URL === undefined) {
-    throw new Error('process.env.NEXT_PUBLIC_API_SERVER_URL is undefined.');
-  }
-
-  if (referer.includes(process.env.NEXT_PUBLIC_API_SERVER_URL)) {
-    return false;
-  }
-
-  return true;
-}
-
 export function isInvalidAccess(req: NextApiRequest) {
-  return (
-    isExternalAccess(req) &&
-    req.headers[API_ROUTES_AUTH_HEADER] !== process.env.API_ROUTES_AUTH
-  );
+  return req.headers['sec-fetch-site'] !== 'same-origin';
 }
