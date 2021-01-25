@@ -10,7 +10,7 @@ import type {User} from '../components/GithubActivity/User';
 
 const INITIAL_USER_NAME = 'numb86';
 
-const PAGE_TITLE = 'GitHub Activity - numb86.net';
+const PAGE_TITLE = "GitHub Activity - numb86's portfolio";
 
 export default function GithubPage({user}: {user: User}) {
   return (

@@ -8,7 +8,7 @@ import {PICK_UP_ENTRY_ID_LIST} from '../shared/constants';
 
 import type {BlogEntry} from '../components/Blog/BlogEntry';
 
-const PAGE_TITLE = 'Blog - numb86.net';
+const PAGE_TITLE = "Blog - numb86's portfolio";
 
 export default function BlogPage({entries}: {entries: BlogEntry[]}) {
   return (
