@@ -1,0 +1,124 @@
+.container {
+  display: grid;
+  grid-template-columns: 200px 500px 200px;
+}
+
+.back_grid {
+  grid-column: 1;
+}
+
+.content_grid {
+  grid-column: 2;
+  margin-top: 20px;
+}
+
+.forward_grid {
+  grid-column: 3;
+}
+
+.side_button_container {
+  position: fixed;
+  text-align: center;
+  height: 100%;
+}
+
+.side_button {
+  position: relative;
+  width: 200px;
+  height: 80%;
+}
+
+.side_button div {
+  position: absolute;
+  height: 50px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.side_button button {
+  font-size: 23px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user img {
+  border-radius: 9999px;
+}
+
+.user .content {
+  margin: 0 0 0 40px
+}
+
+.user .content p {
+  margin: 14px 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.user .content .name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.repository p {
+  margin: 14px 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.commit h2 {
+  margin: 4px 0 10px 0;
+  font-size: 20px;
+}
+
+.commit p {
+  margin: 14px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.commit .description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.more button {
+  padding: 6px 22px;
+  background-color: transparent;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.more button:hover{
+  color: #fff;
+  background-color: #3ea8ff;
+  border-color: #3ea8ff;
+}
+
+.link {
+  border-bottom: 2px solid #3ea8ff;
+}
+
+.link:hover,
+.link:active {
+  color: #0070f3;
+}

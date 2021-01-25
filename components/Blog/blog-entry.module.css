@@ -1,0 +1,19 @@
+.entry .thumbnail_container {
+  text-align: center;
+}
+
+.entry .published {
+  margin: 10px 0 -5px 0;
+  color: #000;
+  font-size: 16px;
+}
+
+.entry .title {
+  color: #000;
+  font-size: 18px;
+}
+
+.entry .summary {
+  color: #333;
+  font-size: 15px;
+}

@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+}
+
+.container ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.container li {
+  margin: 20px 80px 20px 20px;
+  padding-bottom: 4px;
+}
+
+.container button {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid #3ea8ff;
+}

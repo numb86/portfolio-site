@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.container button {
+  padding: 6px 22px;
+  background-color: transparent;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.container button:hover{
+  color: #fff;
+  background-color: #3ea8ff;
+  border-color: #3ea8ff;
+}

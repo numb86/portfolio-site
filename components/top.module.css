@@ -1,0 +1,48 @@
+.headline {
+  font-size: 28px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #3ea8ff;
+}
+
+.avatar {
+  border-radius: 9999px;
+  width: 160px;
+  height: 160px;
+}
+
+.services_in_use {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.services_in_use .twitter_logo {
+  width: 64px;
+  height: 64px;
+}
+
+.services_in_use .hatena_blog_logo {
+  width: 64px;
+  height: 64px;
+}
+
+.services_in_use .github_logo {
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+}
+
+.more {
+  margin: 10px 0 20px 0;
+  padding: 6px 22px;
+  border-radius: 6px;
+  font-size: 20px;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.more:hover{
+  color: #fff;
+  background-color: #3ea8ff;
+  border-color: #3ea8ff;
+}

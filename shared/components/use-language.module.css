@@ -1,0 +1,10 @@
+.container {
+  margin: 8px 0 20px 0;
+  font-size: 16px;
+}
+
+.name {
+  padding-left: 10px;
+  vertical-align: top;
+  font-size: 16px;
+}

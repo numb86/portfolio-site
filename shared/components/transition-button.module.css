@@ -1,0 +1,37 @@
+.button {
+  padding: 0;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #3ea8ff;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  color: #0070f3;
+}
+
+.spinner {
+  border-radius: 50%;
+  visibility: hidden;
+  animation: spinnerAnimation 0.8s infinite linear, makeVisible 0s linear 0.4s forwards;
+  display: inline-block;
+}
+
+@keyframes spinnerAnimation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+@keyframes makeVisible {
+  to {
+    visibility: visible;
+    width: 18px;
+    height: 18px;
+    border: 2px #ccc solid;
+    border-top: 2px #3ea8ff solid;
+    margin-left: 10px;
+  }
+}
