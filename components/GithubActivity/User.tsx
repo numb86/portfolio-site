@@ -29,6 +29,24 @@ type Props = User & {
   setState: (state: GithubActivityState) => void;
 };
 
+export function isUser(value: unknown): value is User {
+  if (typeof value !== 'object') return false;
+  if (value === null) return false;
+
+  const keys = Object.keys(value);
+  if (keys.length !== 6) return false;
+
+  return keys.every(
+    (key) =>
+      key === 'name' ||
+      key === 'login' ||
+      key === 'avatarUrl' ||
+      key === 'bio' ||
+      key === 'githubUrl' ||
+      key === 'type'
+  );
+}
+
 export function UserComponent({
   name,
   login,
