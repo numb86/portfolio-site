@@ -6,9 +6,9 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta property="og:image" content="/images/avatar.png" />
+          <meta property="og:image" content="/images/og.png" />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:image" content="/images/avatar.png" />
+          <meta name="twitter:image" content="/images/og.png" />
           <meta
             name="twitter:description"
             content="numb_86 のポートフォリオサイト。"
