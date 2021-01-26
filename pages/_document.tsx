@@ -6,9 +6,15 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta property="og:image" content="/images/og.png" />
+          <meta
+            property="og:image"
+            content={`${process.env.NEXT_PUBLIC_SITE_FQDN}/images/og.png`}
+          />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:image" content="/images/og.png" />
+          <meta
+            name="twitter:image"
+            content={`${process.env.NEXT_PUBLIC_SITE_FQDN}/images/og.png`}
+          />
           <meta
             name="twitter:description"
             content="numb_86 のポートフォリオサイト。"
