@@ -7,6 +7,4 @@ export const PICK_UP_ENTRY_ID_LIST = [
 
 export const ENTRY_SUMMARY_LENGTH = 100;
 
-export const API_ROUTES_AUTH_HEADER = 'x-api-routes-auth';
-
 export const GA_MEASUREMENT_ID = '';

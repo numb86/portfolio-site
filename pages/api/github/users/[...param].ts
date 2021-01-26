@@ -4,6 +4,8 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import {Octokit} from '@octokit/rest';
 
+import {isUser} from '../../../../components/GithubActivity/User';
+import {fetchSpecifiedUser} from '../../../../shared/api/github/fetchSpecifiedUser';
 import {
   resSuccessfulJson,
   resFailedJson,
@@ -15,7 +17,6 @@ import {getLanguageColor} from '../../../../shared/api/github/getLanguageColor';
 import {colorJson} from '../../../../shared/api/github/colorJson';
 import {trimIsoString} from '../../../../shared/trimIsoString';
 
-import type {User} from '../../../../components/GithubActivity/User';
 import type {Repository} from '../../../../components/GithubActivity/Repository';
 
 const MAX_REPOSITORIES_COUNT = 30;
@@ -43,38 +44,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   // Return basic info about user
   if (secondPath === undefined) {
-    octokit
-      .request('GET /users/{username}', {
-        username: userName,
-      })
-      .then((githubRes) => {
-        if (process.env.NODE_ENV === 'development') {
-          // eslint-disable-next-line no-console
-          console.log(
-            `/users/${userName}`,
-            githubRes.headers['x-ratelimit-remaining']
-          );
-        }
+    const result = await fetchSpecifiedUser(userName, octokit);
+    if (!isUser(result)) {
+      resFailedJson(res, result);
+      return;
+    }
 
-        const {
-          // eslint-disable-next-line camelcase
-          data: {name, login, avatar_url, bio, html_url, type},
-        } = githubRes;
-
-        const user: User = {
-          name,
-          login,
-          avatarUrl: avatar_url,
-          bio,
-          githubUrl: html_url,
-          type,
-        };
-
-        resSuccessfulJson(res, user);
-      })
-      .catch((error) => {
-        resFailedJson(res, error);
-      });
+    resSuccessfulJson(res, result);
 
     return;
   }

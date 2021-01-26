@@ -54,8 +54,8 @@ const PRODUCT_LIST = [
     technologyUsed: 'Deno, AST',
   },
   {
-    name: 'numb86.net 💻',
-    link: 'https://github.com/numb86/numb86.net',
+    name: "numb86's portfolio 💻",
+    link: 'https://github.com/numb86/portfolio-site',
     description: 'Concurrent Mode や SWR を使ったポートフォリオサイト',
     technologyUsed: 'Next.js, TypeScript, Vercel',
   },

@@ -11,6 +11,23 @@ export type BlogEntry = {
 
 type Props = BlogEntry;
 
+export function isBlogEntry(value: unknown): value is BlogEntry {
+  if (typeof value !== 'object') return false;
+  if (value === null) return false;
+
+  const keys = Object.keys(value);
+  if (keys.length !== 5) return false;
+
+  return keys.every(
+    (key) =>
+      key === 'url' ||
+      key === 'title' ||
+      key === 'summary' ||
+      key === 'published' ||
+      key === 'thumbnailUrl'
+  );
+}
+
 export function BlogEntryComponent({
   url,
   title,
