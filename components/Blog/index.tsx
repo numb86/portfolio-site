@@ -56,7 +56,12 @@ function FetchingBlogEntry({
 
   useEffect(() => {
     if (category === 'recent') {
-      setRecentEntriesAccumulation((prev) => [...prev, ...entries]);
+      setRecentEntriesAccumulation((prev) => {
+        const newEntries = entries.filter((e) =>
+          prev.every((prevE) => prevE.url !== e.url)
+        );
+        return [...prev, ...newEntries];
+      });
       if (entries.length === 0) {
         setIsLoadable(false);
       }
