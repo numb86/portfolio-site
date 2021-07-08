@@ -65,6 +65,13 @@ const PRODUCT_LIST = [
     description: 'ツリー図を簡単に作るためのウェブアプリ',
     technologyUsed: 'React, Redux, TypeScript, AWS',
   },
+  {
+    name: 'use KVS as cache architecture',
+    link: 'https://github.com/numb86/use-kvs-as-cache-architecture',
+    description:
+      'Edge で動くキーバリューストアを使って動的コンテンツをキャッシュする実験',
+    technologyUsed: 'Cloudflare Workers KV, Deno',
+  },
 ];
 
 function Products() {
